@@ -1,0 +1,10 @@
+    <nav data-th-fragment="header" class="navbar" style="background-color: darkgray">
+        <a style="color:white" class="navbar-brand">
+            <img th:src="@{/logoFilmotheque.png}">
+            Filmothèque
+        </a>
+        <a data-th-text="${userSession.pseudo} ?: 'user Non Connecté'"></a>
+        <a style="text-decoration: none; color: white" href="/findall">Films</a>
+    </nav>
+</div>
+

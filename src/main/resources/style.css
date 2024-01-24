@@ -1,0 +1,18 @@
+body {
+    background-color: #000;
+    color: #0f0; /* Couleur du texte */
+    font-family: 'Courier New', monospace;
+}
+
+table {
+    border: 2px solid #0f0; /* Bordure du tableau */
+}
+
+th, td {
+    border: 1px solid #0f0; /* Bordure des cellules */
+    padding: 10px;
+}
+
+a {
+    color: #0f0; /* Couleur des liens */
+}

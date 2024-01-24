@@ -1,0 +1,50 @@
+<div data-th-fragment="film(object)" class="container" xmlns:form="http://www.w3.org/1999/xhtml">
+    <h2>Création d'un film</h2>
+    <form data-th-action="@{/creer}" data-th-object="${film}" method="post">
+        <a>Genre : </a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <select data-th-field="*{genre}">
+            <option data-th-each="genre : ${lstGenre}" data-th-value="${genre}" data-th-text="${genre}"></option>
+        </select>
+        <br>
+        <br>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Année : </label>
+            <div class="col-sm-10">
+                <input data-th-field="*{annee}" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Titre : </label>
+            <div class="col-sm-10">
+                <input data-th-field="*{titre}" type="text" class="form-control">
+            </div>
+        </div>
+        <label>Réalisateur : </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <select data-th-field="*{realisateur}">
+            <option data-th-each="realisateur : ${lstParticipant}" data-th-value="${realisateur.id}"
+                    data-th-text="${realisateur}"></option>
+        </select>
+        <br>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Durée : </label>
+            <div class="col-sm-10">
+                <input data-th-field="*{duree}" type="number" class="form-control">
+            </div>
+        </div>
+        <label>Acteurs : </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <select multiple data-th-field="*{acteurs}">
+            <option data-th-each="acteur : ${lstParticipant}" data-th-value="${acteur.id}"
+                    data-th-text="${acteur}"></option>
+        </select>
+        <br>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Synopsis : </label>
+            <div class="col-sm-10">
+                <input data-th-field="*{synopsis}" type="text" class="form-control">
+            </div>
+        </div>
+        <div style="text-align: center">
+            <input type="submit" value="Confirmer">
+        </div>
+    </form>
+</div>

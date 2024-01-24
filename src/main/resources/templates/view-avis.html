@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+<div th:replace="fragments/fragment-header :: header"></div>
+<h1 data-th-text="${'Ajouter un avis au film : ' + film.titre}"></h1>
+
+<form data-th-action="@{/avis/create/{id}(id=${film.id})}" method="post" data-th-object="${avis}">
+    <label>note :</label>
+    <input type="number"  min="0" max="5" data-th-field="*{note}">
+    <br>
+    <label>commentaire :</label>
+    <input maxlength="250" minlength="20" type="text" data-th-field="*{commentaire}">
+    <input type="submit">
+</form>
+
+<div th:replace="fragments/fragment-footer :: footer"></div>
+
+</body>
+</html>

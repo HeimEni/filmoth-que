@@ -1,0 +1,21 @@
+<div data-th-fragment="film(object)" class="container" xmlns:form="http://www.w3.org/1999/xhtml">
+    <h2>Détail du film</h2>
+    <a>Genre : </a>
+    <input class="form-control" type="text"  disabled data-th-value="${object.genre}"><br>
+    <a>Année : </a>
+    <input class="form-control" type="text"  disabled data-th-value="${object.annee}"><br>
+    <a>Titre : </a>
+    <input class="form-control" type="text"  disabled data-th-value="${object.titre}"><br>
+    <a>Réalisateur : </a>
+    <input class="form-control" type="text" data-th-value="${object.realisateur}" disabled><br>
+    <a>Durée : </a>
+    <input class="form-control" type="text"  disabled data-th-value="${object.duree}"><br>
+    <a>Acteurs : </a>
+    <input class="form-control" type="text" data-th-value="${object.acteurs}" disabled><br>
+    <a>Synopsis : </a>
+    <input class="form-control" disabled data-th-value="${object.synopsis}"><br>
+    <h2>Avis sur le film</h2>
+    <a th:each="avis : ${object.avis}">
+        <p data-th-text="${avis.commentaire} + '[' + ${avis.note} + '] - (' + ${avis.membre.pseudo} + ')'"></p>
+    </a>
+</div>
